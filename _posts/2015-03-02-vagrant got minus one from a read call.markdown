@@ -3,7 +3,6 @@ layout: post
 title:  Vagrant 'got minus one from a read call'
 summary: Solving ORACLE listener problem
 date:   2015-03-02 19:19:58
-categories: ORACLE
 ---
 
 When you Vagrant-box hasn't shutdown correctly, which means the ORACLE drivers are still running.
@@ -29,7 +28,7 @@ After killing the listeners, the next step is verifying the content of listener.
 
 listener.ora isn't allowing the restart of the ORACLE listener, due to misconfiguration of the HOST. Change HOST = oracle to HOST = localhost.
 
-{% highlight %}
+{% highlight PowerShell %}
     LISTENER =
       (DESCRIPTION_LIST =
         (DESCRIPTION =
