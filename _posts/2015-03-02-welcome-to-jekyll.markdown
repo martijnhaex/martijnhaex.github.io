@@ -1,25 +1,20 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-03-02 18:32:58
-categories: jekyll update
+title:  Vagrant 'got minus one from a read call'
+summary: Solving ORACLE listener problem
+date:   2015-03-02 19:19:58
+categories: ORACLE
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+When you Vagrant-box hasn't shutdown correctly, which means the ORACLE drivers are still running.
+The listener cannot shutdown correctly. When doing a 'vagrant up' and connecting to the ORACLE database you receive a 'got minus one from a read call' the following steps can resolve this problem.
 
-Jekyll also offers powerful support for code snippets:
+### The Solution
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+First connect through SSH to your virtual environment (vagrant).
+
+Check if a listener is still active.
+
+{% highlight PowerShell %}
+    ps -ef | grep tnslsnr
 {% endhighlight %}
-
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
