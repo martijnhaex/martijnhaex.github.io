@@ -1,11 +1,10 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a Java developer, specialised in back-end. Now trying to get my Javascript, HTML 5 and CSS3 skills up to date. I'm always try to learn new technologies and find the best solution of a certain problem.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Read more [About Me](http://about.me/martijnhaex), connect with me on [LinkedIn](https://www.linkedin.com/in/martijnhaex)
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Thanks for reading!
