@@ -16,15 +16,15 @@ First connect through SSH to your virtual environment (vagrant).
 Check if a listener is still active, if a listener is still active kill the process. (When this problem occurs there should be no active listeners.)
 
 {% highlight PowerShell %}
-    ps -ef | grep tnslsnr
-kill <processID>
+    > ps -ef | grep tnslsnr
+> kill <processID>
 {% endhighlight %}
 
 After killing the listeners, the next step is verifying the content of listener.ora file. Open the listener.ora file:
 
 {% highlight PowerShell %}
-    cd $ORACLE_HOME/network/admin
-vim listener.ora
+    > cd $ORACLE_HOME/network/admin
+> vim listener.ora
 {% endhighlight %}
 
 listener.ora isn't allowing the restart of the ORACLE listener, due to misconfiguration of the HOST. Change **HOST = oracle** to **HOST = localhost**.
@@ -44,5 +44,5 @@ ADR_BASE_LISTENER = /oracle/app/oracle
 Restart the listeners with the following command:
 
 {% highlight PowerShell %}
-    $ORACLE_HOME/bin/lsnrctl start
+    > $ORACLE_HOME/bin/lsnrctl start
 {% endhighlight %}
