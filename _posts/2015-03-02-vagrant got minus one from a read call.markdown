@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  Vagrant 'got minus one from a read call'
+title:  Got minus one from a read call
 summary: Solving ORACLE listener problem
 date:   2015-03-02 19:19:58
 tags: ORACLE, Vagrant
 ---
 
-When your Vagrant-box hasn't shutdown correctly, which means the ORACLE listeners were still running at that moment.
-The listeners couldn't shutdown correctly and release the resources. When doing a 'vagrant up' and querying to the ORACLE database you receive a 'got minus one from a read call' the following steps can resolve this problem.
+This problem occurred during the development project when our Vagrant box (running an ORACLE database) was suspended or shutdown correctly.
 
-### The Solution
+When doing a 'up' of you Vagrant box it looks to be working, no explicit errors on startup. So you start developing. After a while every Java developer needs to contact the database. But then you receive a somewhat cryptic exception like:
+![ORA exception](/public/images/posts/got_minus_one_from_a_read_call.png)
 
-First connect through SSH to your virtual environment (vagrant).
+### Four easy steps for a quick fix
 
+####Step 1
+Connect through SSH to your virtual environment (Vagrant).
+
+####Step 2
 Check if a listener is still active, if a listener is still active kill the process. (When this problem occurs there should be no active listeners.)
 
 {% highlight PowerShell %}
@@ -20,14 +24,15 @@ Check if a listener is still active, if a listener is still active kill the proc
 > kill <processID>
 {% endhighlight %}
 
-After killing the listeners, the next step is verifying the content of listener.ora file. Open the listener.ora file:
+####Step 3
+Verify the content of listener.ora file.
 
 {% highlight PowerShell %}
     > cd $ORACLE_HOME/network/admin
 > vim listener.ora
 {% endhighlight %}
 
-listener.ora isn't allowing the restart of the ORACLE listener, due to misconfiguration of the HOST. Change **HOST = oracle** to **HOST = localhost**.
+listener.ora isn't allowing the restart of the ORACLE listener, due to misconfiguration of the HOST. Change `HOST = oracle` to `HOST = localhost`.
 
 {% highlight PowerShell %}
     LISTENER =
@@ -41,7 +46,8 @@ listener.ora isn't allowing the restart of the ORACLE listener, due to misconfig
 ADR_BASE_LISTENER = /oracle/app/oracle
 {% endhighlight %}
 
-Restart the listeners with the following command:
+####Step 4
+Restart the listeners.
 
 {% highlight PowerShell %}
     > $ORACLE_HOME/bin/lsnrctl start
