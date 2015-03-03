@@ -8,7 +8,7 @@ tags: ORACLE, Vagrant
 
 This problem occurred during the development project when our Vagrant box (running an ORACLE database) was suspended or shutdown correctly.
 
-When doing a 'up' of you Vagrant box it looks to be working, no explicit errors on startup. So you start developing. After a while every Java developer needs to contact the database. But then you receive a somewhat cryptic exception like:
+When doing a 'up' of your Vagrant box it looks to be working, no explicit errors on startup. So you start developing. After a while every Java developer needs to contact the database. But then you receive a somewhat cryptic exception like:
 ![ORA exception](/public/images/posts/got_minus_one_from_a_read_call.png)
 
 ### Four easy steps for a quick fix
@@ -55,4 +55,4 @@ Try to reconnect and query your database.
     > $ORACLE_HOME/bin/lsnrctl start
 {% endhighlight %}
 
-It can be that you need to do a 'suspend' and a 'up' on your Vagrant machine.
+It can be that you need to do a 'suspend' and a 'up' of your Vagrant machine.
