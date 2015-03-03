@@ -3,7 +3,9 @@ layout: post
 title:  Got minus one from a read call
 summary: Solving ORACLE listener problem
 date:   2015-03-02 19:19:58
-tags: ORACLE, Vagrant
+tags:
+- ORACLE
+- Vagrant
 ---
 
 This problem occurred during the development project when our Vagrant box (running an ORACLE database) was suspended or shutdown correctly.
