@@ -49,8 +49,10 @@ ADR_BASE_LISTENER = /oracle/app/oracle
 ####Step 4
 Restart the listeners.
 
-Try to reconnect and query your database. It can be that you need to do a 'suspend' and a 'up' on your Vagrant machine.
+Try to reconnect and query your database.
 
 {% highlight PowerShell %}
     > $ORACLE_HOME/bin/lsnrctl start
 {% endhighlight %}
+
+It can be that you need to do a 'suspend' and a 'up' on your Vagrant machine.
