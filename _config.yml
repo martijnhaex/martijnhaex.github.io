@@ -19,6 +19,7 @@ paginate:            5
 # About/contact
 author:
   name:              Martijn Haex
+  url:               https://twitter.com/martijn_haex
   email:             martijn.haex@c4j.be
 
 # Custom vars
