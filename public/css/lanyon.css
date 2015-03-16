@@ -77,12 +77,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 38em) {
     .container {
-        max-width: 32rem;
+        max-width: 36rem;
     }
 }
 @media (min-width: 56em) {
     .container {
-        max-width: 38rem;
+        max-width: 46rem;
     }
 }
 
@@ -326,11 +326,17 @@ a.sidebar-nav-item:focus {
 }
 
 /* Meta data line below post title */
-.post-date {
+.post-meta {
     display: block;
     margin-top: -.5rem;
     margin-bottom: 1rem;
     color: #9a9a9a;
+}
+
+.post-date {
+    display: inline;
+    margin-top:0;
+    margin-bottom: 0;
 }
 
 /* Related posts */
@@ -585,3 +591,4 @@ a.pagination-item:hover {
         box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
     }
 }
+
