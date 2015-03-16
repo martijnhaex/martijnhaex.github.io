@@ -11,7 +11,7 @@ relative_permalinks: true
 # Setup
 title:               "Martijn Haex"
 tagline:             "Java Consultant"
-description:         "Peronal Blog of Martijn Haex, Java Consultant."
+description:         "Personal Blog of Martijn Haex, Java Consultant."
 url:                 http://blog.haexnet.be
 baseurl:             /
 paginate:            5
